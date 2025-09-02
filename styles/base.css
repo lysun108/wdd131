@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Inter:wght@400;600&display=swap');
+
 :root{
   --brand: #0f5b85;         /* 顶部深蓝 */
   --brand-accent: #f1b100;  /* 标题后的小点缀色 */
