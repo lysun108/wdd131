@@ -1,51 +1,176 @@
-body {
-  font-family: 'Roboto', sans-serif;
+:root{
+  --brand: #0f5b85;         /* 顶部深蓝 */
+  --brand-accent: #f1b100;  /* 标题后的小点缀色 */
+  --ink: #1f2937;           /* 正文深灰 */
+  --bg: #f5f6f8;            /* 页面浅灰背景 */
+  --card: #ffffff;          /* 卡片底色 */
+  --border: #d9dde3;
+  --radius: 14px;
+  --shadow: 0 6px 18px rgba(16, 24, 40, .08);
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body{
   margin: 0;
-  padding: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
   line-height: 1.6;
 }
 
-header {
-  background: #333;
-  color: white;
-  padding: 1rem;
+/* Header */
+.site-header{
+  background: var(--brand);
+  color: #fff;
+  padding: 22px 16px 10px;
   text-align: center;
 }
+#course-title{
+  display: block;                 /* 作业要求：span 作为块级 */
+  font-family: Poppins, Inter, sans-serif;
+  font-weight: 700;
+  font-size: clamp(22px, 2.6vw, 34px);
+  letter-spacing: .3px;
+}
 
-nav {
+/* Nav (Flex + hover 效果) */
+.site-nav{
+  margin-top: 10px;
   display: flex;
+  gap: 28px;
   justify-content: center;
-  gap: 1rem;
+  flex-wrap: wrap;
+  background: #2b2b2b;
+  padding: 12px 16px;
+  border-radius: 999px;
 }
-
-nav a {
-  color: white;
+.site-nav a{
+  color: #fff;
   text-decoration: none;
+  padding: 6px 10px;
+  border-radius: 8px;
+  position: relative;
+}
+.site-nav a::after{
+  content: "";
+  position: absolute;
+  left: 10px; right: 10px; bottom: 4px;
+  height: 2px;
+  background: transparent;
+  transition: background .2s ease, transform .2s ease;
+  transform: scaleX(0);
+}
+.site-nav a:hover{
+  background: rgba(255,255,255,.06);
+}
+.site-nav a:hover::after{
+  background: var(--brand-accent);
+  transform: scaleX(1);
 }
 
-nav a:hover {
+/* Main layout */
+.container{
+  width: min(1100px, 92vw);
+  margin: 24px auto;
+  display: grid;
+  grid-template-columns: 2fr 1.4fr;   /* 左宽右窄，贴近参考图 */
+  gap: 18px;
+}
+@media (max-width: 860px){
+  .container{ grid-template-columns: 1fr; }
+}
+.visually-title{            /* 仍保留 h1 但不占视觉空间 */
+  position: absolute;
+  left: -9999px;
+}
+
+/* Card */
+.card{
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 0 0 18px;
+}
+.card-title{
+  margin: 0;
+  background: #1e5174;
+  color: #fff;
+  padding: 14px 18px;
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
+  font-family: Poppins, Inter, sans-serif;
+  font-weight: 700;
+  letter-spacing: .2px;
+}
+
+/* About Me grid (模仿参考图) */
+.about-grid{
+  display: grid;
+  grid-template-columns: 1.3fr 180px;
+  gap: 18px;
+  padding: 18px;
+  align-items: start;
+}
+@media (max-width: 700px){
+  .about-grid{ grid-template-columns: 1fr; }
+}
+.about-text p{ margin: 0 0 12px; }
+.subheading{
+  margin: 6px 0 4px;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+.divider{
+  height: 1px;
+  border: none;
+  background: var(--border);
+  margin: 8px 0 12px;
+}
+.about-photo img{
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
+.flag{
+  grid-column: 1 / span 1;
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 14px;
+  align-items: center;
+}
+.flag img{
+  width: 110px; height: auto;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+.flag figcaption{
+  font-size: .9rem;
+  color: #555;
+  font-style: italic;
+}
+
+/* Resource links */
+.link-list{
+  margin: 14px 18px 8px;
+  padding-left: 22px;
+}
+.link-list a{
+  color: #0b4e76;
   text-decoration: underline;
 }
-
-main {
-  max-width: 900px;
-  margin: 2rem auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+.link-list a:hover{
+  text-decoration-thickness: 3px;
 }
 
-.card {
-  border: 1px solid #ddd;
-  padding: 1rem;
-  border-radius: 10px;
-  background: #f9f9f9;
-}
-
-footer {
+/* Footer */
+.site-footer{
+  margin-top: 22px;
+  background: var(--brand);
+  color: #fff;
   text-align: center;
-  margin-top: 2rem;
-  padding: 1rem;
-  background: #333;
-  color: white;
+  padding: 16px 10px;
+  font-size: .95rem;
 }
