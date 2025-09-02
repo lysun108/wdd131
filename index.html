@@ -1,41 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>WDD 131 – Dynamic Web Fundamentals – Yang Liao</title>
-  <meta name="description" content="WDD 131 – Dynamic Web Fundamentals | Yang Liao | Course landing page with assignments and projects.">
-  <meta name="author" content="Yang Liao">
-  <link rel="stylesheet" href="styles/base.css">
+  <meta name="description" content="WDD 131 – Dynamic Web Fundamentals | Yang Liao | Course landing page with assignments, links, and resources." />
+  <meta name="author" content="Yang Liao" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+
+  <!-- CSS & JS -->
+  <link rel="stylesheet" href="styles/base.css" />
   <script src="scripts/getdates.js" defer></script>
 </head>
 <body>
-  <header>
-    <span id="course-title">WDD 131 – Dynamic Web Fundamentals</span>
-    <nav>
-      <a href="https://www.linkedin.com/">LinkedIn</a>
-      <a href="https://byupw.instructure.com/">Canvas</a>
-      <a href="https://www.churchofjesuschrist.org/study/scriptures">Scriptures</a>
-      <a href="#">Final Project</a>
+  <header class="site-header">
+    <span id="course-title">WDD 131: Dynamic Web Fundamentals</span>
+
+    <nav class="site-nav">
+      <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://byupw.instructure.com/" target="_blank" rel="noopener">Canvas</a>
+      <a href="https://www.churchofjesuschrist.org/study/scriptures" target="_blank" rel="noopener">Scripture</a>
+      <a href="#" title="Final Project folder placeholder">Final Project</a>
     </nav>
   </header>
 
-  <main>
-    <h1>Yang Liao</h1>
+  <main class="container">
+    <!-- 视觉上隐藏，但保留语义的 h1（你的名字） -->
+    <h1 class="visually-title">Yang Liao</h1>
+
+    <!-- 左侧卡片：About Me -->
     <section class="card">
-      <h2>About Me</h2>
-      <img src="images/profile.jpg" alt="Profile picture">
-      <p>Hello! I am a student learning web development...</p>
+      <h2 class="card-title">About Me</h2>
+
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            Hi! I'm <strong>Yang Liao</strong>. I'm studying web development and enjoy building clean,
+            accessible interfaces. I like learning new tech and improving real projects step by step.
+          </p>
+
+          <h3 class="subheading">Guangxi, China</h3>
+          <hr class="divider" />
+          <p>
+            Guangxi is an autonomous region in southern China, known for its dramatic karst mountains,
+            winding rivers, and rich ethnic diversity. Guilin and Yangshuo are famous for limestone
+            peaks and river scenery, and Guangxi is also home to the Zhuang people—the largest ethnic
+            minority group in China.
+          </p>
+        </div>
+
+        <!-- 个人照片（本地 images/profile.jpg） -->
+        <figure class="about-photo">
+          <img src="images/profile.jpg" alt="Portrait of Yang Liao" />
+        </figure>
+
+        <!-- 广西风景照占位（本地 images/guangxi_scenery.jpg） -->
+        <figure class="flag">
+          <img src="images/guangxi_scenery.jpg" alt="Guangxi Scenery" />
+          <figcaption>Scenery of Guangxi, China</figcaption>
+        </figure>
+      </div>
     </section>
+
+    <!-- 右侧卡片：资源链接 -->
     <section class="card">
-      <h2>My Interests</h2>
-      <img src="images/code.jpg" alt="Coding picture">
-      <p>I enjoy coding, technology, and building websites...</p>
+      <h2 class="card-title">Web Dev Resources</h2>
+      <ul class="link-list">
+        <li><a href="https://dev.to/" target="_blank" rel="noopener">Dev.to Community</a></li>
+        <li><a href="https://www.smashingmagazine.com/" target="_blank" rel="noopener">Smashing Magazine</a></li>
+        <li><a href="https://css-tricks.com/" target="_blank" rel="noopener">CSS-Tricks</a></li>
+        <li><a href="https://www.w3schools.com/" target="_blank" rel="noopener">W3Schools</a></li>
+        <li><a href="https://www.udemy.com/" target="_blank" rel="noopener">Udemy</a></li>
+        <li><a href="https://placehold.co/" target="_blank" rel="noopener">Image Placeholder</a></li>
+      </ul>
     </section>
   </main>
 
-  <footer>
-    <p>&copy; <span id="currentyear"></span> | Yang Liao | California, USA</p>
+  <footer class="site-footer">
+    <p>&copy; <span id="currentyear"></span> · Yang Liao · California, USA</p>
     <p id="lastModified"></p>
   </footer>
 </body>
