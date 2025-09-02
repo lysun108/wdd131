@@ -1,3 +1,7 @@
-// 动态显示年份和最后修改日期
-document.getElementById("currentyear").textContent = new Date().getFullYear();
-document.getElementById("lastModified").textContent = "Last Modified: " + document.lastModified;
+// Copyright year
+const y = document.getElementById("currentyear");
+if (y) y.textContent = new Date().getFullYear();
+
+// Last modified
+const lm = document.getElementById("lastModified");
+if (lm) lm.textContent = `Last Modification: ${document.lastModified}`;
