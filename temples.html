@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/temples.css">
-  <link rel="stylesheet" href="styles/temples-large.css" media="(min-width: 700px)">
+  <link rel="stylesheet" href="styles/temples-large.css">
   <script defer src="scripts/temples.js"></script>
 </head>
 <body>
@@ -30,15 +31,21 @@
   <main>
     <h2>Temples</h2>
     <section id="album" class="album-grid" aria-live="polite">
-      <!-- Cards will be injected by temples.js -->
-      <noscript>Please enable JavaScript to view the album.</noscript>
+      <figure class="card"><img src="images/salt-lake-temple.jpg" alt="Salt Lake Temple" loading="lazy" width="800" height="600"><figcaption><p class="title">Salt Lake Temple</p><p class="meta">Salt Lake City, Utah • Dedicated 1893 • 253,015 sq ft</p></figcaption></figure>
+      <figure class="card"><img src="images/laie-hawaii-temple.jpg" alt="Laie Hawaii Temple" loading="lazy" width="800" height="600"><figcaption><p class="title">Laie Hawaii Temple</p><p class="meta">Laie, Hawaii • Dedicated 1919 • 42,775 sq ft</p></figcaption></figure>
+      <figure class="card"><img src="images/mesa-arizona-temple.jpg" alt="Mesa Arizona Temple" loading="lazy" width="800" height="600"><figcaption><p class="title">Mesa Arizona Temple</p><p class="meta">Mesa, Arizona • Dedicated 1927 • 75,000 sq ft</p></figcaption></figure>
+      <figure class="card"><img src="images/los-angeles-temple.jpg" alt="Los Angeles California Temple" loading="lazy" width="800" height="600"><figcaption><p class="title">Los Angeles California Temple</p><p class="meta">Los Angeles, California • Dedicated 1956 • 190,614 sq ft</p></figcaption></figure>
+      <figure class="card"><img src="images/oakland-california-temple.jpg" alt="Oakland California Temple" loading="lazy" width="800" height="600"><figcaption><p class="title">Oakland California Temple</p><p class="meta">Oakland, California • Dedicated 1964 • 80,437 sq ft</p></figcaption></figure>
+      <figure class="card"><img src="images/provo-utah-temple.jpg" alt="Provo Utah Temple" loading="lazy" width="800" height="600"><figcaption><p class="title">Provo Utah Temple</p><p class="meta">Provo, Utah • Dedicated 1972 • 130,825 sq ft</p></figcaption></figure>
+      <figure class="card"><img src="images/hong-kong-temple.jpg" alt="Hong Kong China Temple" loading="lazy" width="800" height="600"><figcaption><p class="title">Hong Kong China Temple</p><p class="meta">Hong Kong, China • Dedicated 1996 • 51,980 sq ft</p></figcaption></figure>
+      <figure class="card"><img src="images/rome-italy-temple.jpg" alt="Rome Italy Temple" loading="lazy" width="800" height="600"><figcaption><p class="title">Rome Italy Temple</p><p class="meta">Rome, Italy • Dedicated 2019 • 41,010 sq ft</p></figcaption></figure>
+      <figure class="card"><img src="images/yigo-guam-temple.jpg" alt="Yigo Guam Temple" loading="lazy" width="800" height="600"><figcaption><p class="title">Yigo Guam Temple</p><p class="meta">Yigo, Guam • Dedicated 2020 • 6,861 sq ft</p></figcaption></figure>
     </section>
   </main>
 
-<footer class="site-footer">
-  <p>&copy; <span id="currentyear"></span> · Yang Liao · California, USA</p>
-  <p class="muted">Last Modification: <span id="lastModified"></span></p>
-</footer>
-
+  <footer class="site-footer">
+    <p>&copy; <span id="currentyear"></span> · Yang Liao · California, USA</p>
+    <p class="muted">Last Modification: <span id="lastModified"></span></p>
+  </footer>
 </body>
 </html>
