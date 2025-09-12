@@ -1,9 +1,8 @@
 /* Larger view styles */
 @media (min-width: 700px) {
-  /* nav laid out with flex horizontally and always visible in larger view */
-  .header-inner { gap: 1rem; }
-
   .menu-button { display: none; }
+
+  .header-inner { max-width: 1100px; gap: 1rem; }
 
   .nav-links {
     display: flex !important;
@@ -13,20 +12,15 @@
   }
 
   .nav-links a {
-    transition: transform 120ms ease;
+    transition: transform 120ms ease, background-color 120ms ease, border-color 120ms ease;
   }
+  .nav-links a:hover { transform: translateY(-1px); }
 
-  .nav-links a:hover {
-    transform: translateY(-1px);
-  }
-
-  /* album grid: responsive columns */
   .album-grid {
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 1.25rem;
   }
 
-  h2 {
-    font-size: 1.75rem;
-  }
+  h2 { font-size: 1.75rem; }
+  .card { box-shadow: 0 2px 8px rgba(0,0,0,0.06); border-radius: 0.75rem; }
 }
