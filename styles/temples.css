@@ -1,3 +1,9 @@
+/* 让 figure 不要默认边距，避免奇怪空白 */
+figure { margin: 0; }
+
+/* 双保险：图片永远不超出卡片 */
+.card img { width: 100%; max-width: 100%; height: auto; display: block; }
+
 /* 颜色变量：沿用深蓝主题 */
 :root {
   --bg: #f3f4f6;
