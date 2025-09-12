@@ -1,42 +1,21 @@
-/* Mobile-first styles for Temple Album */
-/* Typography & base */
+/* 颜色变量：沿用深蓝主题 */
 :root {
-  --bg: #f3f4f6;           /* 页面浅灰背景 */
-  --text: #1f2937;         /* 深灰文字 */
+  --bg: #f3f4f6;
+  --text: #1f2937;
   --muted: #6b7280;
-  --brand: #0c4a6e;        /* 主色深蓝 */
+  --brand: #0c4a6e;      /* 深蓝主色，用于 header/footer */
   --card: #ffffff;
   --border: #e5e7eb;
 }
-* { box-sizing: border-box; }
 
-html, body { height: 100%; }
-
-body {
-  margin: 0;
-  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-  color: var(--text);
-  background: var(--bg);
-  line-height: 1.5;
-}
-
-/* Header & nav */
+/* Header 改为深蓝底、白字 */
 .site-header {
   border-bottom: 1px solid var(--border);
-  background: #fff;
+  background: var(--brand);    /* 原先是 #fff */
   position: sticky;
   top: 0;
   z-index: 10;
-}
-
-.header-inner {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 0.75rem 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.75rem;
+  color: #fff;
 }
 
 .site-header h1 {
@@ -44,24 +23,25 @@ body {
   margin: 0;
   font-weight: 800;
   letter-spacing: 0.3px;
+  color: #fff;                 /* 标题变白 */
 }
 
-/* hamburger */
+/* 汉堡按钮在深色背景上需要反色边框/文字 */
 .menu-button {
-  border: 1px solid var(--border);
-  background: #fff;
+  border: 1px solid rgba(255,255,255,0.35);
+  background: transparent;     /* 透明更像你首页 */
   padding: 0.5rem 0.65rem;
   border-radius: 0.5rem;
   font-size: 1.25rem;
   cursor: pointer;
+  color: #fff;
 }
-
 .menu-button:focus {
-  outline: 3px solid var(--brand);
+  outline: 3px solid #38bdf8;  /* 浅蓝可视的 Focus */
   outline-offset: 2px;
 }
 
-/* nav links default hidden (mobile) */
+/* 顶部导航：默认白字；悬停给半透明高亮 */
 .nav-links {
   display: none;
   flex-direction: column;
@@ -69,92 +49,34 @@ body {
   width: 100%;
   max-width: 500px;
 }
-
 .nav-links a {
   text-decoration: none;
-  color: var(--text);
+  color: #fff;                                 /* 白字 */
   padding: 0.5rem 0.75rem;
   border-radius: 0.5rem;
   border: 1px solid transparent;
 }
-
-/* hover & active effects */
-.nav-links a:hover, .nav-links a:focus {
-  background: var(--card);
-  border-color: var(--border);
+.nav-links a:hover,
+.nav-links a:focus {
+  background: rgba(255,255,255,0.12);          /* 深色上的 hover */
+  border-color: rgba(255,255,255,0.25);
 }
-
 .nav-links a.active {
-  background: #e6f7ff;
-  border-color: #bae6fd;
-  color: #075985;
+  background: rgba(56,189,248,0.18);           /* 活动态浅蓝 */
+  border-color: rgba(56,189,248,0.45);
+  color: #e0f2fe;
 }
 
-/* when nav is open (mobile) */
-.nav-open .nav-links {
-  display: flex;
-}
-
-/* main */
-main {
-  max-width: 960px;
-  margin: 1rem auto;
-  padding: 0 1rem 2rem;
-}
-
-h2 {
-  font-family: Merriweather, Georgia, 'Times New Roman', serif;
-  font-size: 1.5rem;
-  margin: 1rem 0;
-}
-
-/* album grid (mobile: 1 column) */
-.album-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-}
-
-.card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 0.75rem;
-  overflow: hidden;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
-}
-
-.card img {
-  display: block;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-}
-
-.card figcaption {
-  padding: 0.75rem 1rem;
-}
-
-.card .title {
-  margin: 0 0 0.25rem;
-  font-weight: 700;
-}
-
-.card .meta {
-  margin: 0;
-  color: var(--muted);
-  font-size: 0.9rem;
-}
-
+/* Footer 改为深蓝底、白字，并保持次要信息变淡 */
 .site-footer {
   border-top: 1px solid var(--border);
-  background: #fff;
+  background: var(--brand);   /* 原先是 #fff */
   padding: 1rem;
   text-align: center;
   font-size: 0.95rem;
+  color: #fff;                /* 主文字白色 */
 }
-
 .site-footer .muted {
-  color: var(--muted);
+  color: rgba(255,255,255,0.8);  /* 次要文字半透明白 */
   margin: 0.25rem 0 0;
 }
