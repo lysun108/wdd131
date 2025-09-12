@@ -1,15 +1,13 @@
 /* Mobile-first styles for Temple Album */
 /* Typography & base */
 :root {
-  --bg: #ffffff;
-  --text: #1f2937;
+  --bg: #f3f4f6;           /* 页面浅灰背景 */
+  --text: #1f2937;         /* 深灰文字 */
   --muted: #6b7280;
-  --brand: #0ea5e9;
-  --brand-2: #22c55e;
-  --card: #f8fafc;
+  --brand: #0c4a6e;        /* 主色深蓝 */
+  --card: #ffffff;
   --border: #e5e7eb;
 }
-
 * { box-sizing: border-box; }
 
 html, body { height: 100%; }
