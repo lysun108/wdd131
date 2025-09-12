@@ -1,0 +1,30 @@
+/* Larger view styles (min-width: 700px) */
+/* nav laid out with flex horizontally and always visible in larger view */
+.header-inner { gap: 1rem; }
+
+.menu-button { display: none; }
+
+.nav-links {
+  display: flex !important;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-links a {
+  transition: transform 120ms ease;
+}
+
+.nav-links a:hover {
+  transform: translateY(-1px);
+}
+
+/* album grid: responsive columns */
+.album-grid {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+}
