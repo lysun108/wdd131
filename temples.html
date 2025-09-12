@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Temple Album | WDD 131</title>
+  <meta name="description" content="Responsive temple album with filtering and hamburger menu." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/temples.css">
+  <link rel="stylesheet" href="styles/temples-large.css" media="(min-width: 700px)">
+  <script defer src="scripts/temples.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <h1>Temple Album</h1>
+      <button id="menu" class="menu-button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation">☰</button>
+      <nav id="primary-nav" class="nav-links">
+        <a href="#" data-filter="home" class="active">Home</a>
+        <a href="#" data-filter="old">Old</a>
+        <a href="#" data-filter="new">New</a>
+        <a href="#" data-filter="large">Large</a>
+        <a href="#" data-filter="small">Small</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h2>Temples</h2>
+    <section id="album" class="album-grid" aria-live="polite">
+      <!-- Cards will be injected by temples.js -->
+      <noscript>Please enable JavaScript to view the album.</noscript>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="currentyear"></span> | Temple Album • WDD 131</p>
+    <p class="muted">Last Modified: <span id="lastModified"></span></p>
+  </footer>
+</body>
+</html>
