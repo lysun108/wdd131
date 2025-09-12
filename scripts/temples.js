@@ -19,17 +19,17 @@ if (menuBtn && header && nav) {
   });
 }
 
-// Data set of temples (example data; replace images with real temple photos later)
+// Data set of temples (real image file names)
 const temples = [
-  { name: "Salt Lake Temple", location: "Salt Lake City, Utah", dedicated: 1893, area: 253015, img: "https://placehold.co/800x600?text=Salt+Lake+Temple" },
-  { name: "Laie Hawaii Temple", location: "Laie, Hawaii", dedicated: 1919, area: 42775, img: "https://placehold.co/800x600?text=Laie+Hawaii+Temple" },
-  { name: "Mesa Arizona Temple", location: "Mesa, Arizona", dedicated: 1927, area: 75000, img: "https://placehold.co/800x600?text=Mesa+Arizona+Temple" },
-  { name: "Los Angeles California Temple", location: "Los Angeles, California", dedicated: 1956, area: 190614, img: "https://placehold.co/800x600?text=Los+Angeles+Temple" },
-  { name: "Oakland California Temple", location: "Oakland, California", dedicated: 1964, area: 80437, img: "https://placehold.co/800x600?text=Oakland+Temple" },
-  { name: "Provo Utah Temple", location: "Provo, Utah", dedicated: 1972, area: 130825, img: "https://placehold.co/800x600?text=Provo+Temple" },
-  { name: "Hong Kong China Temple", location: "Hong Kong, China", dedicated: 1996, area: 51980, img: "https://placehold.co/800x600?text=Hong+Kong+Temple" },
-  { name: "Rome Italy Temple", location: "Rome, Italy", dedicated: 2019, area: 41010, img: "https://placehold.co/800x600?text=Rome+Temple" },
-  { name: "Yigo Guam Temple", location: "Yigo, Guam", dedicated: 2020, area: 6861, img: "https://placehold.co/800x600?text=Yigo+Guam+Temple" },
+  { name: "Salt Lake Temple", location: "Salt Lake City, Utah", dedicated: 1893, area: 253015, img: "images/salt-lake-temple.jpg" },
+  { name: "Laie Hawaii Temple", location: "Laie, Hawaii", dedicated: 1919, area: 42775, img: "images/laie-hawaii-temple.jpg" },
+  { name: "Mesa Arizona Temple", location: "Mesa, Arizona", dedicated: 1927, area: 75000, img: "images/mesa-arizona-temple.jpg" },
+  { name: "Los Angeles California Temple", location: "Los Angeles, California", dedicated: 1956, area: 190614, img: "images/los-angeles-temple.jpg" },
+  { name: "Oakland California Temple", location: "Oakland, California", dedicated: 1964, area: 80437, img: "images/oakland-california-temple.jpg" },
+  { name: "Provo Utah Temple", location: "Provo, Utah", dedicated: 1972, area: 130825, img: "images/provo-utah-temple.jpg" },
+  { name: "Hong Kong China Temple", location: "Hong Kong, China", dedicated: 1996, area: 51980, img: "images/hong-kong-temple.jpg" },
+  { name: "Rome Italy Temple", location: "Rome, Italy", dedicated: 2019, area: 41010, img: "images/rome-italy-temple.jpg" },
+  { name: "Yigo Guam Temple", location: "Yigo, Guam", dedicated: 2020, area: 6861, img: "images/yigo-guam-temple.jpg" },
 ];
 
 // Render function
