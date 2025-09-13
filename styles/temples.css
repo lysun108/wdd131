@@ -86,3 +86,43 @@ figure { margin: 0; }
   color: rgba(255,255,255,0.8);  /* 次要文字半透明白 */
   margin: 0.25rem 0 0;
 }
+/* 细节微调：标题置中、卡片标题/说明置中 */
+h2 { 
+  font-family: Merriweather, Georgia, 'Times New Roman', serif;
+  font-size: 1.5rem;
+  margin: 1rem 0;
+  text-align: center;                 /* ← 像示例一样置中 */
+}
+
+/* 默认移动端：一列，间距稍大一点，避免挤 */
+.album-grid { 
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+figure { margin: 0; }                 /* 清理默认 margin，避免空白 */
+
+.card figcaption { 
+  padding: .5rem 0 .75rem; 
+  text-align: center;                 /* 标题/说明居中 */
+}
+
+.card .title { 
+  margin: 0 0 .25rem; 
+  font-weight: 700; 
+}
+
+.card .meta { 
+  margin: 0; 
+  color: var(--muted); 
+  font-size: .95rem; 
+}
+
+.card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;                /* 统一 4:3 缩略图比例 */
+  object-fit: cover;
+}
