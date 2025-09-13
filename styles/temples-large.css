@@ -17,7 +17,9 @@
   .nav-links a:hover { transform: translateY(-1px); }
 
   .album-grid {
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    /* 每列最小 300px，最大 380px；自动排满，内容整体居中 */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 380px));
+    justify-content: center;
     gap: 1.25rem;
   }
 
