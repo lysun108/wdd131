@@ -1,28 +1,40 @@
 /* Larger view styles */
 @media (min-width: 700px) {
+  /* 桌面导航：横排、隐藏汉堡 */
   .menu-button { display: none; }
-
   .header-inner { max-width: 1100px; gap: 1rem; }
 
   .nav-links {
     display: flex !important;
     flex-direction: row;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.75rem;
   }
-
-  .nav-links a {
-    transition: transform 120ms ease, background-color 120ms ease, border-color 120ms ease;
-  }
+  .nav-links a { transition: transform 120ms ease; }
   .nav-links a:hover { transform: translateY(-1px); }
 
+  /* 相册：两列固定卡片宽度，整体居中 */
   .album-grid {
-    /* 每列最小 300px，最大 380px；自动排满，内容整体居中 */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 380px));
-    justify-content: center;
-    gap: 1.25rem;
+    grid-template-columns: repeat(2, 300px);   /* ← 700px 起：两列 */
+    justify-content: center;                    /* 网格整体水平居中 */
+    gap: 2rem;                                  /* 列间距像示例更宽松 */
   }
 
-  h2 { font-size: 1.75rem; }
-  .card { box-shadow: 0 2px 8px rgba(0,0,0,0.06); border-radius: 0.75rem; }
+  .card {
+    width: 300px;                               /* 卡片固定宽度 */
+    max-width: 100%;
+    justify-self: center;                       /* 单张时也居中 */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    border-radius: 0.75rem;
+  }
+
+  /* 4:3 的缩略图会在 300px 下渲染成 300×225，接近示例大小 */
+  .card img { width: 100%; height: auto; }
+}
+
+/* 更宽时改为三列排列（示例桌面效果） */
+@media (min-width: 1000px) {
+  .album-grid {
+    grid-template-columns: repeat(3, 300px);   /* ← 1000px 起：三列 */
+  }
 }
