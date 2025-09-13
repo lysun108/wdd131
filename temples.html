@@ -2,18 +2,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- ① 一定放在 <head> 里的第一个标签；用小写 utf-8 -->
+  <meta charset="utf-8">
+
+  <!-- ② 视口 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- ③ 标题（包含 Temple / Album 关键词） -->
   <title>Temple Album | WDD 131</title>
-  <meta name="description" content="Responsive temple album with filtering and hamburger menu." />
+
+  <!-- ④ 描述 -->
+  <meta name="description" content="Temple Album: a responsive gallery with filters (Old, New, Large, Small) and a mobile hamburger menu.">
+
+  <!-- ⑤ 作者（把 undefined 改成你的名字） -->
+  <meta name="author" content="Yang Liao">
+
+  <!-- 之后再放字体/样式等链接 -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles/temples.css">
-<link rel="stylesheet" href="styles/temples-large.css"> <!-- 没有 media 属性 -->
-
+  <link rel="stylesheet" href="styles/temples.css">
+  <link rel="stylesheet" href="styles/temples-large.css">
   <script defer src="scripts/temples.js"></script>
 </head>
+
 <body>
   <header class="site-header">
     <div class="header-inner">
