@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="partly cloudy">
+  <circle cx="24" cy="24" r="12" fill="#FFD54F"/>
+  <ellipse cx="38" cy="40" rx="18" ry="10" fill="#e0e7ef"/>
+  <ellipse cx="26" cy="44" rx="14" ry="8" fill="#f2f6fa"/>
+</svg>
