@@ -1,0 +1,71 @@
+/* WDD131 Week03 — Guangxi (Yang Liao) */
+:root {
+  --bg: #f7fafc;
+  --card: #ffffff;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --accent: #2563eb;
+  --ring: rgba(37, 99, 235, 0.15);
+  --radius: 1.25rem;
+  --gap: 1rem;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--bg);
+}
+img { max-width: 100%; height: auto; display: block; }
+
+.site-header { padding: 1.25rem; text-align: center; }
+#site-title { margin: 0; font-size: 1.75rem; }
+.tagline { margin: 0.25rem 0 0; color: var(--muted); }
+
+.hero { position: relative; overflow: clip; border-radius: 0; }
+.hero img { width: 100%; height: auto; display: block; }
+.hero-caption {
+  position: absolute; inset: auto 1rem 1rem 1rem;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(4px);
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+.hero-caption h2 { margin: 0 0 0.25rem; }
+.hero-caption .place-name { color: var(--accent); }
+
+.grid { display: grid; gap: var(--gap); padding: 1rem; }
+
+.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 1rem;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.03), 0 1px 8px var(--ring);
+}
+
+.kv { display: grid; grid-template-columns: auto 1fr; gap: .25rem .75rem; margin: 0; padding: 0; }
+.kv dt { font-weight: 600; color: var(--muted); }
+.kv dd { margin: 0; }
+
+.weather .label { color: var(--muted); margin-right: 0.25rem; }
+.weather .note { color: var(--muted); font-size: 0.9rem; }
+
+.two-col { grid-template-columns: 1fr; }
+.weather h2::after { content: ""; }
+
+@media (min-width: 700px) {
+  .grid.two-col { grid-template-columns: 2fr 1fr; align-items: start; }
+  .hero-caption { inset: auto 2rem 2rem auto; max-width: min(520px, 60%); }
+  .site-header { padding: 1.5rem; }
+  #site-title { font-size: 2rem; }
+
+  .weather h2::after {
+    content: " ⛅";
+    font-size: 1.15em;
+    margin-left: .25rem;
+  }
+  .weather-mobile-icon { display: none; }
+}
