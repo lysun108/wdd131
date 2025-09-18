@@ -110,3 +110,9 @@ a:focus-visible, button:focus-visible, .card:focus-within {
   }
   .weather-mobile-icon { display: none; }
 }
+.site-footer {
+  padding: 1rem 1rem 2rem;
+  color: var(--muted);
+  text-align: center;  /* 居中对齐 */
+}
+.site-footer p { margin: .2rem 0; }
