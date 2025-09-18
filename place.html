@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guangxi, China — Country/Region Page</title>
+  <meta name="description" content="WDD 131 Week 03 responsive place page for Guangxi, China.">
+  <link rel="preload" href="images/hero-large.jpg" as="image" imagesrcset="images/hero-small.jpg 800w, images/hero-large.jpg 1400w" imagesizes="100vw">
+  <link rel="stylesheet" href="styles/styles.css">
+  <script src="scripts/script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <h1 id="site-title">Guangxi, China</h1>
+    <p class="tagline">A subtropical region in South China, famous for karst landscapes (Guilin &amp; Yangshuo).</p>
+  </header>
+
+  <main>
+    <section class="hero">
+      <picture>
+        <source srcset="images/hero-large.jpg" media="(min-width: 700px)" type="image/jpeg">
+        <img src="images/hero-small.jpg" alt="Karst hills and rivers in Guangxi" width="1400" height="520" loading="eager">
+      </picture>
+      <div class="hero-caption">
+        <h2>Welcome to <span class="place-name">Guangxi</span></h2>
+        <p>Guangxi Zhuang Autonomous Region borders Vietnam and the Gulf of Tonkin. Iconic limestone hills, rivers, and diverse cultures make it a top travel destination.</p>
+      </div>
+    </section>
+
+    <section class="grid two-col">
+      <article class="card about">
+        <h2>Data</h2>
+        <dl class="kv">
+          <dt>Area</dt><dd>≈236,700 sq km</dd>
+          <dt>Population</dt><dd>~50,000,000</dd>
+          <dt>Capital</dt><dd>Nanning</dd>
+          <dt>Languages</dt><dd>Mandarin Chinese, Zhuang</dd>
+          <dt>Currency</dt><dd>Chinese Yuan (CNY)</dd>
+          <dt>Time Zone</dt><dd>UTC+8</dd>
+          <dt>Calling Code</dt><dd>+86</dd>
+          <dt>Internet TLD</dt><dd>.cn</dd>
+        </dl>
+      </article>
+
+      <aside class="card weather">
+        <h2>Weather</h2>
+        <div class="weather-mobile-icon">
+          <img src="icons/weather.svg" width="64" height="64" alt="Weather icon">
+        </div>
+        <div class="weather-data">
+          <p><span class="label">Current:</span> <span id="temp">94</span>°F</p>
+          <p><span class="label">Wind:</span> <span id="wind">4</span> mph</p>
+          <p><span class="label">Wind Chill:</span> <span id="windchill">N/A</span></p>
+          <p class="note">*Wind chill displays only when conditions are met.</p>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> • Yang Liao</p>
+    <p>Last Modified: <span id="last-modified"></span></p>
+  </footer>
+</body>
+</html>
