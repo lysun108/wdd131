@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Review Submitted | WDD 131</title>
+  <meta name="description" content="Submission confirmation with counter.">
+  <meta name="author" content="Yang Liao">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/form.css">
+  <script src="scripts/review.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <h1>Thank you for your review!</h1>
+    <p class="subhead">Here is what we received.</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Submission Details</h2>
+      <dl class="review-details" id="reviewDetails">
+        <!-- Filled by JS from URL params -->
+      </dl>
+    </section>
+
+    <section class="card">
+      <h2>Your Review Counter</h2>
+      <p id="counterText">You have submitted <strong>0</strong> review(s) from this browser.</p>
+    </section>
+
+    <p><a class="button-link" href="form.html">Submit another review</a></p>
+  </main>
+
+  <footer class="site-footer">
+    <p><span id="year"></span> · WDD 131 · Product Review · Last Modification: <span id="lastmod"></span></p>
+  </footer>
+</body>
+</html>
