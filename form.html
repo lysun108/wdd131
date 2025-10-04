@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Product Review Form | WDD 131</title>
+  <meta name="description" content="W05 Product Review Form for WDD 131.">
+  <meta name="author" content="Yang Liao">
+  <link rel="stylesheet" href="styles/form.css">
+  <script src="scripts/form.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <h1>W05 · Product Review</h1>
+    <p class="subhead">Fill out the form below to review a product.</p>
+  </header>
+
+  <main>
+    <form id="reviewForm" method="get" action="review.html" novalidate>
+      <!-- Product Name -->
+      <fieldset>
+        <legend>Product</legend>
+        <label for="productName">Product Name <span aria-hidden="true">*</span></label>
+        <select id="productName" name="product" required>
+          <option value="" disabled selected>Select a Product ...</option>
+          <!-- Options populated by JS from products[] -->
+        </select>
+        <p class="hint">Choose the item you installed.</p>
+      </fieldset>
+
+      <!-- Overall Rating -->
+      <fieldset>
+        <legend>Overall Rating <span aria-hidden="true">*</span></legend>
+        <div class="rating-group" role="radiogroup" aria-label="Overall rating">
+          <!-- Radios 5→1 so keyboarding is easy; all share the same name -->
+          <input type="radio" id="star5" name="rating" value="5" required>
+          <label for="star5" title="5 stars">★★★★★</label>
+
+          <input type="radio" id="star4" name="rating" value="4">
+          <label for="star4" title="4 stars">★★★★☆</label>
+
+          <input type="radio" id="star3" name="rating" value="3">
+          <label for="star3" title="3 stars">★★★☆☆</label>
+
+          <input type="radio" id="star2" name="rating" value="2">
+          <label for="star2" title="2 stars">★★☆☆☆</label>
+
+          <input type="radio" id="star1" name="rating" value="1">
+          <label for="star1" title="1 star">★☆☆☆☆</label>
+        </div>
+      </fieldset>
+
+      <!-- Date of Installation -->
+      <fieldset>
+        <legend>Installation</legend>
+        <label for="installDate">Date of Installation <span aria-hidden="true">*</span></label>
+        <input type="date" id="installDate" name="installDate" required max="2025-10-04">
+      </fieldset>
+
+      <!-- Useful Features (check all that apply) -->
+      <fieldset>
+        <legend>Useful Features (check all that apply)</legend>
+        <div class="checks">
+          <div><input type="checkbox" id="feat1" name="features" value="durability"><label for="feat1">Durability</label></div>
+          <div><input type="checkbox" id="feat2" name="features" value="performance"><label for="feat2">Performance</label></div>
+          <div><input type="checkbox" id="feat3" name="features" value="design"><label for="feat3">Design</label></div>
+          <div><input type="checkbox" id="feat4" name="features" value="ease-of-use"><label for="feat4">Ease of use</label></div>
+          <div><input type="checkbox" id="feat5" name="features" value="value"><label for="feat5">Value for money</label></div>
+        </div>
+      </fieldset>
+
+      <!-- Written Review (optional) -->
+      <fieldset>
+        <legend>Written Review (optional)</legend>
+        <label for="writtenReview">Your comments</label>
+        <textarea id="writtenReview" name="writtenReview" rows="5" placeholder="What did you like? What could be better?"></textarea>
+      </fieldset>
+
+      <!-- User Name (optional) -->
+      <fieldset>
+        <legend>Your Info (optional)</legend>
+        <label for="userName">Your name</label>
+        <input type="text" id="userName" name="userName">
+      </fieldset>
+
+      <div class="actions">
+        <input type="submit" value="Submit Review">
+      </div>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <p><span id="year"></span> · WDD 131 · Product Review · <a href="https://byui-cse.github.io/wdd131-ww-course/week05/index.html" target="_blank" rel="noopener">Week 05</a> · Last Modification: <span id="lastmod"></span></p>
+  </footer>
+</body>
+</html>
