@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Project Site Plan | Yosemite National Park Guide</title>
+
+  <!-- Typography (used on this document) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles/siteplan.css">
+</head>
+<body>
+  <header class="container">
+    <h1>Yosemite National Park Guide — Project Site Plan</h1>
+    <p class="tagline">A small, student-built guide with practical info for first-time visitors.</p>
+  </header>
+
+  <main class="container">
+    <section id="naming">
+      <h2>1) Naming Conventions</h2>
+      <ul>
+        <li>Project folder: <code>project</code></li>
+        <li>This document: <code>siteplan.html</code></li>
+        <li>CSS folder: <code>styles</code> → <code>siteplan.css</code></li>
+        <li>Images folder: <code>images</code> → <code>wireframe-mobile.png</code>, <code>wireframe-desktop.png</code></li>
+        <li>Naming style: lowercase, hyphen-separated file names (no spaces).</li>
+      </ul>
+    </section>
+
+    <section id="site-name">
+      <h2>2) Site Name</h2>
+      <p><strong>Yosemite Pocket Guide</strong></p>
+      <p>The name conveys a concise, practical guide focused on essential info for first‑time or returning visitors. It is easy to remember and fits the site’s scope.</p>
+    </section>
+
+    <section id="purpose">
+      <h2>3) Site Purpose</h2>
+      <p>
+        A small informational site with 3–4 pages—<em>Home</em>, <em>Trails &amp; Viewpoints</em>, <em>Plan Your Visit</em> (passes, seasons, transport, lodging), and <em>About/Contact</em>—with shared navigation and a responsive, mobile‑first layout (GitHub Pages hosting).
+      </p>
+      <h3>Planned JavaScript Features</h3>
+      <ul>
+        <li><strong>Trail filter/search</strong> by difficulty, distance, and area (data in arrays/objects, rendered dynamically).</li>
+        <li><strong>Favorites / Trip list</strong> saved with <code>localStorage</code>.</li>
+        <li><strong>Theme toggle</strong> (light/dark) remembered across visits.</li>
+        <li><strong>Contact form validation</strong> with template‑string messages.</li>
+        <li><strong>Lazy‑loaded, optimized images</strong> and accessible alt text.</li>
+      </ul>
+      <h3>Why this subject</h3>
+      <p>
+        I’ve visited Yosemite twice, and those trips showed me how much first‑time visitors need clear, practical information. Building a small guide lets me turn experience into something helpful while demonstrating course skills—semantic HTML, responsive CSS, and interactive JavaScript.
+      </p>
+    </section>
+
+    <section id="scenarios">
+      <h2>4) Scenarios (Target‑audience questions)</h2>
+      <ul>
+        <li>“Which beginner‑friendly trails have great views within a 2–3 hour window?”</li>
+        <li>“Do I need a peak‑season reservation or just the standard entrance pass?”</li>
+        <li>“Where can I park and use the shuttle if I arrive mid‑day?”</li>
+        <li>“What’s the best time of year to see waterfalls at their peak?”</li>
+      </ul>
+    </section>
+
+    <section id="color-schema">
+      <h2>5) Color Schema</h2>
+      <p>The plan uses the selected colors below (also applied throughout this page):</p>
+      <ul class="swatches">
+        <li><span class="swatch swatch-forest"></span> <code>#1F4D3A</code> Forest Green — headings, buttons</li>
+        <li><span class="swatch swatch-granite"></span> <code>#5B6B73</code> Granite Gray — body text accents</li>
+        <li><span class="swatch swatch-sky"></span> <code>#6FA8DC</code> Sky Blue — links, highlights</li>
+        <li><span class="swatch swatch-meadow"></span> <code>#F1E7B6</code> Meadow — background panels</li>
+      </ul>
+    </section>
+
+    <section id="typography">
+      <h2>6) Typography</h2>
+      <ul>
+        <li><strong>Headings:</strong> Poppins, 700/600 weight (applied on this document).</li>
+        <li><strong>Body:</strong> Inter, 400/600 (applied on this document).</li>
+        <li>Fallback stack: system UI, Arial, sans-serif.</li>
+      </ul>
+    </section>
+
+    <section id="wireframes">
+      <h2>7) Wireframes (Home Page)</h2>
+      <p>Sketches for the home page layout. One for mobile, one for a wider desktop view.</p>
+      <figure>
+        <img src="images/wireframe-mobile.png" alt="Mobile wireframe of the Yosemite guide home page showing header, hero image, filter card, and card list." width="340" />
+        <figcaption>Mobile wireframe</figcaption>
+      </figure>
+      <figure>
+        <img src="images/wireframe-desktop.png" alt="Desktop wireframe with a wider hero, three‑column highlights, and footer." width="680" />
+        <figcaption>Desktop wireframe</figcaption>
+      </figure>
+    </section>
+
+    <section id="testing">
+      <h2>8) Testing &amp; Validation Checklist</h2>
+      <ul class="checklist">
+        <li>Passes W3C HTML validator (no errors).</li>
+        <li>Passes W3C CSS validator (no errors).</li>
+        <li>Good color contrast and accessible alt text.</li>
+        <li>Lighthouse: performance, best practices, and SEO reviewed.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="container">
+    <p>© 2025 Yang Liao — WDD 131 | This document intentionally uses the selected color schema and typography.</p>
+  </footer>
+</body>
+</html>
