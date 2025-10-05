@@ -48,11 +48,17 @@ textarea{resize:vertical}
 .rating-group label{
   display:block; text-align:center; padding:.5rem .25rem; border:1px solid var(--border); border-radius:10px; cursor:pointer; user-select:none
 }
-.rating-group input:checked + label,
-.rating-group label:hover,
-.rating-group label:has(+ input:checked){
-  border-color:var(--brand);
-  outline:2px solid color-mix(in oklab, var(--brand) 30%, transparent);
+
+/* 仅“选中”的那颗显示强高亮（外轮廓） */
+.rating-group input:checked + label{
+  border-color: var(--brand);
+  outline: 2px solid var(--brand);
+}
+
+/* 悬停仅改变边框，不画外轮廓，避免“两颗都像被选中”的错觉 */
+.rating-group label:hover{
+  border-color: var(--brand);
+  outline: none;
 }
 
 .actions{display:flex; justify-content:flex-start}
