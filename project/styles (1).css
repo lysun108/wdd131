@@ -1,0 +1,178 @@
+/* ===================================================================
+   Yosemite Road Trip Guide • styles.css
+   - Responsive, accessible, modern CSS (WDD 131 W06 ready)
+   - Color scheme: Forest Green (#1F4D3A), Granite Gray (#5B6B73),
+                   Sky Blue (#6FA8DC), Meadow (#F1E7B6)
+   =================================================================== */
+
+/* ----------------------------
+   1) Root tokens & resets
+   ---------------------------- */
+:root{
+  --fg:#111;
+  --bg:#ffffff;
+  --muted:#5B6B73;
+  --brand:#1F4D3A;
+  --accent:#6FA8DC;
+  --panel:#F1E7B6;
+  --border:#e3e8ef;
+
+  --radius:1rem;
+  --shadow:0 1px 2px rgba(0,0,0,.06);
+  --space:1rem;
+  --maxw:1100px;
+}
+:root.dark{
+  --bg:#0c0f13;
+  --fg:#e7eaee;
+  --muted:#b9c2c8;
+  --panel:#1a2127;
+  --border:#232a31;
+}
+*{ box-sizing:border-box }
+html,body{ height:100% }
+body{
+  margin:0;
+  color:var(--fg);
+  background:var(--bg);
+  font:16px/1.55 Inter, system-ui, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  text-rendering:optimizeLegibility;
+  -webkit-font-smoothing:antialiased;
+}
+img{ max-width:100%; height:auto; display:block }
+a{ color:var(--accent); text-decoration:none }
+a:hover{ text-decoration:underline }
+.visually-hidden{ position:absolute !important; height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px); white-space:nowrap }
+.skip-link{
+  position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;
+}
+.skip-link:focus{
+  position:fixed;left:1rem;top:1rem;width:auto;height:auto;padding:.5rem .75rem;
+  background:var(--panel);border-radius:.5rem;z-index:1000;
+}
+
+/* ----------------------------
+   2) Layout wrappers
+   ---------------------------- */
+.container{ max-width:var(--maxw); margin:0 auto; padding:var(--space) }
+.grid{ display:grid; gap:var(--space) }
+.card{
+  background:var(--bg);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:var(--space);
+  box-shadow:var(--shadow);
+}
+.muted{ color:var(--muted) }
+.btn{
+  display:inline-block; background:var(--brand); color:#fff;
+  padding:.6rem .9rem; border-radius:.7rem; border:0;
+}
+.btn:hover{ filter:brightness(1.05) }
+
+/* ----------------------------
+   3) Header & Navigation
+   ---------------------------- */
+.site-header{
+  position:sticky; top:0; z-index:10;
+  background:var(--bg); border-bottom:1px solid var(--border);
+  display:grid; grid-template-columns:auto 1fr auto auto;
+  align-items:center; gap:.75rem; padding:.7rem 1rem;
+}
+.brand{ font-weight:800; color:var(--brand) }
+#menu-btn{ display:none; font-size:1.25rem; padding:.35rem .55rem }
+.nav{ display:flex; gap:1rem; flex-wrap:wrap }
+.nav a{
+  color:var(--fg); padding:.25rem .5rem; border-radius:.5rem;
+}
+.nav a[aria-current="page"]{ background:var(--panel); font-weight:700 }
+.nav a:hover{ background:var(--panel); text-decoration:none }
+.toggles{ display:flex; gap:.5rem; align-items:center }
+#theme-toggle{ padding:.35rem .55rem }
+
+/* ----------------------------
+   4) Hero section
+   ---------------------------- */
+.hero{
+  display:grid; gap:var(--space); align-items:center;
+  grid-template-columns: 1.1fr .9fr; /* image + text */
+  padding:var(--space);
+}
+.hero-media{
+  border-radius:var(--radius); overflow:hidden;
+  border:1px solid var(--border);
+}
+.hero .panel{
+  background:var(--panel);
+  border-radius:var(--radius);
+  padding:clamp(1rem, 1rem + 1vw, 2rem);
+}
+.hero h1{ margin:.25rem 0  .5rem; font-size:clamp(1.4rem, 1.1rem + 1.4vw, 2rem) }
+.hero p{ margin:.25rem 0 1rem }
+
+/* ----------------------------
+   5) Sections
+   ---------------------------- */
+section + section{ margin-top:calc(var(--space) * 1.25) }
+
+/* Featured grid turns into cards */
+@media (min-width: 680px){
+  .grid{ grid-template-columns:repeat(3, minmax(0,1fr)) }
+}
+
+/* Seasons gallery */
+.season-gallery .season-images{
+  display:grid; gap:var(--space);
+  grid-template-columns: repeat(2, minmax(0,1fr));
+}
+@media (min-width: 820px){
+  .season-gallery .season-images{ grid-template-columns: repeat(4, minmax(0,1fr)) }
+}
+.season-gallery figure{
+  border:1px solid var(--border);
+  border-radius:.9rem; overflow:hidden;
+  background:var(--bg); box-shadow:var(--shadow);
+}
+.season-gallery figcaption{
+  padding:.5rem .75rem; color:var(--muted); text-align:center;
+}
+
+/* ----------------------------
+   6) Forms (Contact page)
+   ---------------------------- */
+form.card label{ display:block; font-weight:700; margin-top:.6rem }
+input,select,textarea,button{
+  font:inherit; color:var(--fg); background:var(--bg);
+  border:1px solid var(--border); border-radius:.6rem;
+  padding:.55rem .7rem;
+}
+textarea{ resize:vertical }
+button{ cursor:pointer }
+#form-errors{ border-color:#e99; background:rgba(255,0,0,.04) }
+
+/* ----------------------------
+   7) Footer
+   ---------------------------- */
+.site-footer{
+  margin-top:2rem; border-top:1px solid var(--border);
+  padding:1rem; color:var(--muted);
+}
+
+/* ----------------------------
+   8) Small screens
+   ---------------------------- */
+@media (max-width: 800px){
+  .site-header{ grid-template-columns:auto auto 1fr auto }
+  #menu-btn{ display:inline-block }
+  .nav{ display:none }
+  .nav.open{ display:flex }
+  .hero{ grid-template-columns:1fr }
+}
+
+/* ----------------------------
+   9) Print tweaks
+   ---------------------------- */
+@media print{
+  .site-header, .site-footer, #menu-btn, #theme-toggle{ display:none !important }
+  a{ text-decoration:none }
+}
