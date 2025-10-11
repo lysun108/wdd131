@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Plan Your Trip • Yosemite Road Trip Guide</title>
+  <meta name="description" content="Food, lodging, and practical planning for a Yosemite road trip. Choose 1–5 day itineraries and get quick tips.">
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- ===== HEADER (shared) ===== -->
+  <header class="site-header">
+    <a class="brand" href="index.html">Yosemite Road Trip Guide</a>
+    <button id="menu-btn" aria-label="Open menu" aria-expanded="false">☰</button>
+    <nav id="site-nav" class="nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="plantrip.html" aria-current="page">Plan Your Trip</a>
+      <a href="safety.html">Safety Tips</a>
+      <a href="contact.html">Contact</a>
+      <a href="references.html">References</a>
+    </nav>
+    <div class="toggles">
+      <button id="theme-toggle" aria-label="Toggle theme">🌓</button>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero container" aria-label="Plan your Yosemite road trip">
+    <figure class="hero-media">
+      <img src="images/yosemite-banner.jpg" alt="Wide view across Yosemite Valley from a mountain overlook">
+      <figcaption class="visually-hidden">Yosemite Valley overlook</figcaption>
+    </figure>
+    <div class="panel">
+      <h1>Plan Your Trip</h1>
+      <p>Food & lodging options, quick itineraries, and practical advice for a smooth Yosemite road trip.</p>
+      <p><a class="btn" href="#planner">Open trip planner ↓</a></p>
+    </div>
+  </section>
+
+  <!-- ===== MAIN ===== -->
+  <main id="main" class="container">
+    <!-- Food -->
+    <section aria-labelledby="food-h2">
+      <h2 id="food-h2">Food Options</h2>
+      <article class="card">
+        <p>
+          Food services in Yosemite are managed by <strong>Yosemite Hospitality</strong>—from groceries and pizza to a fine dining experience at
+          <em>The Ahwahnee</em>. Dining reservations open 366 days in advance and are strongly recommended from spring through fall and during holidays.
+        </p>
+        <ul>
+          <li><strong>The Ahwahnee Bar:</strong> Indoor/outdoor seating year-round for drinks, hot cocoa, and snacks.</li>
+          <li>
+            <strong>Curry Village Pizza Patio &amp; Bar:</strong> Pizza, salads, and drinks for lunch and dinner. Seasonal hours with outdoor seating.
+            <br><br>
+            <img src="images/curry-village.jpg" loading="lazy" alt="Curry Village Pizza Patio with visitors dining outdoors">
+          </li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- Lodging -->
+    <section aria-labelledby="lodging-h2">
+      <h2 id="lodging-h2">Lodging</h2>
+      <article class="card">
+        <p>
+          Lodging inside the park is also operated by <strong>Yosemite Hospitality</strong>. Options range from simple tent cabins to deluxe rooms.
+          Reservations open 366 days in advance and are highly recommended during peak seasons.
+        </p>
+        <ul>
+          <li><strong>Yosemite Valley Lodge:</strong> Near Yosemite Falls with easy access to dining and attractions. Open year-round.</li>
+          <li><strong>Wawona Hotel:</strong> Historic Victorian lodge near the Mariposa Grove of Giant Sequoias. Open seasonally.</li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- Trip Planner -->
+    <section id="planner" class="card" aria-labelledby="planner-h2">
+      <h2 id="planner-h2">Trip Duration Recommendations</h2>
+
+      <div class="controls" style="margin-top:.25rem">
+        <label for="daySelect">Choose your trip length:</label>
+        <select id="daySelect" name="daySelect">
+          <option value="">-- Select --</option>
+          <option value="1">1 Day</option>
+          <option value="2">2 Days</option>
+          <option value="3">3 Days</option>
+          <option value="4">4–5 Days</option>
+        </select>
+      </div>
+
+      <!-- Plans: use [hidden] to avoid inline CSS; JS toggles the attribute -->
+      <div id="plan1" class="plan-box card" hidden>
+        <h3>1-Day Highlights Tour</h3>
+        <p><strong>Highlights:</strong> Focus on Yosemite Valley icons — Yosemite Falls, El Capitan, Half Dome.</p>
+        <p><strong>Itinerary:</strong><br>
+          Morning: Tunnel View photo stop.<br>
+          Late Morning: Bridalveil Fall &amp; Yosemite Falls base walk.<br>
+          Afternoon: Picnic, riverside walk, or visit the Visitor Center.<br>
+          Consider a guided day tour to maximize sightseeing.
+        </p>
+        <p><strong>Note:</strong> Tight schedule — plan transportation and timing carefully.</p>
+      </div>
+
+      <div id="plan2" class="plan-box card" hidden>
+        <h3>2-Day In-Depth Experience</h3>
+        <p><strong>Highlights:</strong> Extend the 1-day tour and explore deeper.</p>
+        <p><strong>Itinerary:</strong><br>
+          Day 1: Same as 1-day trip.<br>
+          Day 2: Mariposa Grove of Giant Sequoias, hike to Mirror Lake.<br>
+          Optional stargazing in Yosemite Valley at night.
+        </p>
+        <p><strong>Note:</strong> Book lodging or a campsite early.</p>
+      </div>
+
+      <div id="plan3" class="plan-box card" hidden>
+        <h3>3-Day Nature Discovery</h3>
+        <p><strong>Highlights:</strong> Go deeper with moderate hikes.</p>
+        <p><strong>Itinerary:</strong><br>
+          Days 1–2: Follow the 2-day plan.<br>
+          Day 3: Vernal &amp; Nevada Falls via the Mist Trail, or explore Hetch Hetchy Reservoir.
+        </p>
+        <p><strong>Note:</strong> Bring water, food, and hiking safety gear.</p>
+      </div>
+
+      <div id="plan4" class="plan-box card" hidden>
+        <h3>4–5 Day Outdoor Adventure</h3>
+        <p><strong>Highlights:</strong> Add alpine meadows, remote trails, or water activities.</p>
+        <p><strong>Itinerary:</strong><br>
+          Build upon the 3-day plan with optional:<br>
+          • Half Dome hike (permit required)<br>
+          • Rafting on the Merced River<br>
+          • Exploring high-country viewpoints
+        </p>
+        <p><strong>Note:</strong> Research permits and safety for advanced activities.</p>
+      </div>
+
+      <div class="card">
+        <h3>Helpful Tips</h3>
+        <ul>
+          <li>Summer is crowded — reserve lodging and entrances early.</li>
+          <li>Weather varies — bring layers and sun protection.</li>
+          <li>Leave no trace — pack out all trash.</li>
+          <li>Check <a href="https://www.nps.gov/yose" target="_blank" rel="noopener">the official Yosemite site</a> for closures and updates.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <p>© 2025 Yang Liao — Yosemite Road Trip Guide • <a href="references.html">References</a></p>
+    <p><small>Last updated: <time id="last-updated" datetime=""></time></small></p>
+  </footer>
+
+  <!-- Shared site script (menu, theme, etc.) -->
+  <script src="scripts/main.js" defer></script>
+  <!-- Last-updated script -->
+  <script src="scripts/last-updated.js" defer></script>
+
+  <!-- Page-specific: lightweight planner logic -->
+  <script>
+    (function(){
+      const select = document.getElementById('daySelect');
+      const boxes  = ['plan1','plan2','plan3','plan4'].map(id => document.getElementById(id));
+
+      function showPlan(value){
+        boxes.forEach(b => b && (b.hidden = true));
+        const id = value && ('plan' + value);
+        const box = id && document.getElementById(id);
+        if (box) box.hidden = false;
+      }
+
+      // Initialize from previous choice (optional)
+      const saved = localStorage.getItem('tripDays');
+      if (saved && select.querySelector(`option[value="${saved}"]`)) {
+        select.value = saved; showPlan(saved);
+      }
+
+      select.addEventListener('change', () => {
+        localStorage.setItem('tripDays', select.value || '');
+        showPlan(select.value);
+      });
+    })();
+  </script>
+</body>
+</html>
