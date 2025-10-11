@@ -255,3 +255,24 @@ textarea[aria-invalid="true"]{
   border-color:#d92d20;
   box-shadow:0 0 0 3px rgba(217,45,32,.10);
 }
+.media-frame{
+  margin:.75rem 0 0;
+  border:1px solid var(--border);
+  border-radius:.9rem;
+  overflow:hidden;
+  background:var(--bg);
+  box-shadow:var(--shadow);
+}
+.media-frame img{
+  display:block;
+  width:100%;
+  height:auto;         /* 由 width/height 属性确定比例，避免布局抖动 */
+  object-fit:cover;    /* 即使源图略有偏差也能视觉居中 */
+  object-position:center;
+}
+.media-caption{
+  padding:.5rem .75rem;
+  color:var(--muted);
+  text-align:center;
+  font-size:.9rem;
+}
