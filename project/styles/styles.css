@@ -21,6 +21,8 @@
   --shadow:0 1px 2px rgba(0,0,0,.06);
   --space:1rem;
   --maxw:1100px;
+
+  --focus: 0 0 0 3px rgba(111,168,220,.45);
 }
 :root.dark{
   --bg:#0c0f13;
@@ -29,26 +31,36 @@
   --panel:#1a2127;
   --border:#232a31;
 }
+
 *{ box-sizing:border-box }
 html,body{ height:100% }
 body{
   margin:0;
   color:var(--fg);
   background:var(--bg);
-  font:16px/1.55 Inter, system-ui, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  font:16px/1.6 Inter, system-ui, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
   text-rendering:optimizeLegibility;
   -webkit-font-smoothing:antialiased;
 }
+
 img{ max-width:100%; height:auto; display:block }
 a{ color:var(--accent); text-decoration:none }
 a:hover{ text-decoration:underline }
-.visually-hidden{ position:absolute !important; height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px); white-space:nowrap }
+
+:focus-visible{ outline: none; box-shadow: var(--focus) }
+
+.visually-hidden{
+  position:absolute !important;
+  height:1px; width:1px; overflow:hidden;
+  clip:rect(1px,1px,1px,1px); white-space:nowrap
+}
 .skip-link{
-  position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;
+  position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;
 }
 .skip-link:focus{
-  position:fixed;left:1rem;top:1rem;width:auto;height:auto;padding:.5rem .75rem;
-  background:var(--panel);border-radius:.5rem;z-index:1000;
+  position:fixed; left:1rem; top:1rem; width:auto; height:auto;
+  padding:.5rem .75rem; background:var(--panel);
+  border-radius:.5rem; z-index:1000;
 }
 
 /* ----------------------------
@@ -62,13 +74,19 @@ a:hover{ text-decoration:underline }
   border-radius:var(--radius);
   padding:var(--space);
   box-shadow:var(--shadow);
+  transition: transform .12s ease, box-shadow .12s ease;
 }
+.card:hover{ transform: translateY(-1px); box-shadow:0 2px 6px rgba(0,0,0,.07) }
+
 .muted{ color:var(--muted) }
+
 .btn{
-  display:inline-block; background:var(--brand); color:#fff;
+  display:inline-block;
+  background:var(--brand); color:#fff;
   padding:.6rem .9rem; border-radius:.7rem; border:0;
 }
 .btn:hover{ filter:brightness(1.05) }
+.btn:focus-visible{ box-shadow:var(--focus) }
 
 /* ----------------------------
    3) Header & Navigation
@@ -80,42 +98,67 @@ a:hover{ text-decoration:underline }
   align-items:center; gap:.75rem; padding:.7rem 1rem;
 }
 .brand{ font-weight:800; color:var(--brand) }
+.brand:hover{ text-decoration:none; filter:brightness(1.1) }
+
 #menu-btn{ display:none; font-size:1.25rem; padding:.35rem .55rem }
+#menu-btn:focus-visible{ box-shadow:var(--focus) }
+
 .nav{ display:flex; gap:1rem; flex-wrap:wrap }
 .nav a{
   color:var(--fg); padding:.25rem .5rem; border-radius:.5rem;
 }
 .nav a[aria-current="page"]{ background:var(--panel); font-weight:700 }
 .nav a:hover{ background:var(--panel); text-decoration:none }
+.nav a:focus-visible{ box-shadow:var(--focus) }
+
 .toggles{ display:flex; gap:.5rem; align-items:center }
 #theme-toggle{ padding:.35rem .55rem }
+#theme-toggle:focus-visible{ box-shadow:var(--focus) }
 
 /* ----------------------------
    4) Hero section
+   - In HTML, hero uses: <section class="hero container"> …
    ---------------------------- */
 .hero{
-  display:grid; gap:var(--space); align-items:center;
-  grid-template-columns: 1.1fr .9fr; /* image + text */
-  padding:var(--space);
+  /* container already adds horizontal padding */
+  padding: 0;
+  display:grid; gap:1.25rem; align-items:center;
+  /* image + text, with sensible bounds */
+  grid-template-columns: minmax(360px, 1fr) minmax(320px, 520px);
 }
+
+/* Keep media visually balanced (4:3). Prevent overly tall hero. */
 .hero-media{
-  border-radius:var(--radius); overflow:hidden;
+  aspect-ratio: 4 / 3;
+  border-radius:var(--radius);
+  overflow:hidden;
   border:1px solid var(--border);
 }
+.hero-media video,
+.hero-media img{
+  width:100%; height:100%; object-fit:cover;
+}
+
 .hero .panel{
   background:var(--panel);
   border-radius:var(--radius);
-  padding:clamp(1rem, 1rem + 1vw, 2rem);
+  padding:clamp(1rem, 1rem + .6vw, 1.6rem);
 }
-.hero h1{ margin:.25rem 0  .5rem; font-size:clamp(1.4rem, 1.1rem + 1.4vw, 2rem) }
+.hero h1{ margin:.25rem 0 .5rem; font-size:clamp(1.4rem, 1.1rem + 1.4vw, 2rem) }
 .hero p{ margin:.25rem 0 1rem }
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .card, .btn{ transition: none }
+  .hero-media video{ animation: none }
+}
 
 /* ----------------------------
    5) Sections
    ---------------------------- */
 section + section{ margin-top:calc(var(--space) * 1.25) }
 
-/* Featured grid turns into cards */
+/* Featured grid becomes 3 columns on medium+ screens */
 @media (min-width: 680px){
   .grid{ grid-template-columns:repeat(3, minmax(0,1fr)) }
 }
@@ -136,6 +179,10 @@ section + section{ margin-top:calc(var(--space) * 1.25) }
 .season-gallery figcaption{
   padding:.5rem .75rem; color:var(--muted); text-align:center;
 }
+
+/* Optional: style inline 'source' link under intro paragraph */
+.source-link{ color:var(--muted) }
+.source-link:hover{ color:var(--accent) }
 
 /* ----------------------------
    6) Forms (Contact page)
@@ -166,7 +213,7 @@ button{ cursor:pointer }
   #menu-btn{ display:inline-block }
   .nav{ display:none }
   .nav.open{ display:flex }
-  .hero{ grid-template-columns:1fr }
+  .hero{ grid-template-columns:1fr }   /* stack hero on small screens */
 }
 
 /* ----------------------------
